@@ -1,0 +1,66 @@
+// Copy for the Founders, Companies and Investors pages. Edit the text here.
+export const ROUTE_PAGES = {
+  founders: {
+    eyebrow: 'For founders',
+    title: ['Legal support that', 'grows with your business.'],
+    sub: 'From the first line of your shareholder agreement to your Series A and beyond, we stay beside you at every stage of the climb.',
+    achieveIntro: 'The legal groundwork that lets you focus on building, raising and hiring.',
+    achieve: [
+      { title: 'Launch on solid ground', text: 'The right structure, cap table and founder agreements from day one.' },
+      { title: 'Raise with confidence', text: 'Term sheets, SAFEs and priced rounds negotiated on fair terms.' },
+      { title: 'Protect what you build', text: 'IP ownership, trademarks and confidentiality locked in early.' },
+      { title: 'Hire and keep talent', text: 'Employment contracts and option plans that motivate your team.' },
+      { title: 'Avoid costly mistakes', text: 'Clear advice before small issues become expensive ones.' },
+      { title: 'Scale across borders', text: 'Entity setup and compliance as you expand to new markets.' },
+    ],
+    how: [
+      { title: 'Discovery call', text: 'We learn your business, your goals and what keeps you up at night.' },
+      { title: 'Legal roadmap', text: 'A clear plan of what you need now, next, and at your next round.' },
+      { title: 'Fixed-scope packages', text: 'Predictable pricing for the milestones that matter most.' },
+      { title: 'On-call partner', text: 'Direct access to a partner when decisions can’t wait.' },
+      { title: 'Growing together', text: 'As you scale, our support scales with you, from seed to exit.' },
+    ],
+  },
+  companies: {
+    eyebrow: 'For companies',
+    title: ['Legal foundations that', 'support your growth.'],
+    sub: 'Structure, contracts and compliance built for organisations scaling across teams, products and markets.',
+    achieveIntro: 'Strong legal foundations that keep your organisation moving forward.',
+    achieve: [
+      { title: 'Structure for scale', text: 'Group structures and governance designed for the company you are becoming.' },
+      { title: 'Contracts that work', text: 'Commercial terms that protect you without slowing down sales.' },
+      { title: 'Compliant operations', text: 'GDPR, employment and regulatory compliance handled with care.' },
+      { title: 'Protected IP', text: 'Your brand, software and know-how secured in every market.' },
+      { title: 'Motivated teams', text: 'Incentive and equity programmes that attract and retain talent.' },
+      { title: 'New markets', text: 'Cross-border expansion across Europe, the US and the UK.' },
+    ],
+    how: [
+      { title: 'Legal health check', text: 'A review of your structure, contracts and risks to find what matters.' },
+      { title: 'Shared priorities', text: 'We agree on the legal priorities that support your business plan.' },
+      { title: 'Embedded counsel', text: 'We work like part of your team, inside your tools and timelines.' },
+      { title: 'Transactions', text: 'From partnerships to acquisitions, we lead deals end to end.' },
+      { title: 'Ongoing review', text: 'Regular check-ins so your legal foundation keeps pace with growth.' },
+    ],
+  },
+  investors: {
+    eyebrow: 'For investors',
+    title: ['Legal support that protects', 'value and keeps deals moving.'],
+    sub: 'Diligence, deal terms and portfolio support for funds, family offices and angels investing across borders.',
+    achieveIntro: 'Clarity and speed on every deal, and support for the companies you back.',
+    achieve: [
+      { title: 'Clear deal terms', text: 'Term sheets and investment agreements that reflect your position.' },
+      { title: 'Thorough diligence', text: 'Focused legal due diligence that surfaces what really matters.' },
+      { title: 'Protected value', text: 'Investor rights, governance and exit terms that protect returns.' },
+      { title: 'Faster closings', text: 'Experienced deal teams that keep timelines tight.' },
+      { title: 'Portfolio support', text: 'Practical help for your portfolio companies when they need it.' },
+      { title: 'Cross-border deals', text: 'Investments structured across Polish, English and US law.' },
+    ],
+    how: [
+      { title: 'Mandate', text: 'We understand your thesis, deal structure and timeline.' },
+      { title: 'Due diligence', text: 'Targeted review with clear red flags and practical fixes.' },
+      { title: 'Negotiation', text: 'We negotiate terms that protect your investment and relationships.' },
+      { title: 'Closing', text: 'Documents, conditions and signatures coordinated to close on time.' },
+      { title: 'Portfolio care', text: 'Ongoing support for follow-on rounds, exits and governance.' },
+    ],
+  },
+}
