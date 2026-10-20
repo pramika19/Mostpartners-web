@@ -22,7 +22,7 @@ export default function TeamGrid() {
             <li key={i} className="team-card" data-reveal style={{ '--d': `${0.1 + (i % 3) * 0.12}s` }}>
               <div className="team-photo">
                 {m.photo ? (
-                  <img src={m.photo} alt={m.name} loading="lazy" />
+                  <img src={`${import.meta.env.BASE_URL}${m.photo.replace(/^\//, "")}`} alt={m.name} loading="lazy" />
                 ) : (
                   <div className="team-placeholder" aria-hidden="true">
                     <svg viewBox="0 0 200 250">

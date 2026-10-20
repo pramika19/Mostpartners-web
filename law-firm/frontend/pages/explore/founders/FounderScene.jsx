@@ -6,7 +6,7 @@ const DOTS = [[360, 1260.0], [940, 1240.0], [1360, 1048.0], [1750, 773.0]]
 export default function FounderScene() {
   return (
     <div className="page-scene founder-scene" aria-hidden="true">
-      <img className="page-photo founder-photo" src="/images/hero-founders-lone.jpg" alt="" />
+      <img className="page-photo founder-photo" src={`${import.meta.env.BASE_URL}images/hero-founders-lone.jpg`} alt="" />
       <svg className="founder-route" viewBox="0 0 2400 1350" preserveAspectRatio="xMidYMid slice">
         <path className="fr-line" d={ROUTE} pathLength="1" />
         {DOTS.map(([x, y], i) => (

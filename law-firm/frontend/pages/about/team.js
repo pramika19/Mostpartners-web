@@ -1,6 +1,6 @@
 // The people shown on the About page.
 // To add a photo: put the image in frontend/public/images/team/ and set `photo`,
-// e.g. photo: '/images/team/anna.jpg'. Portrait photos (about 4:5) look best.
+// e.g. photo: 'images/team/anna.jpg'. Portrait photos (about 4:5) look best.
 export const TEAM = [
   { name: 'Partner Name', role: 'Managing Partner', focus: 'Venture capital & M&A', photo: null },
   { name: 'Partner Name', role: 'Partner', focus: 'Corporate & structuring', photo: null },

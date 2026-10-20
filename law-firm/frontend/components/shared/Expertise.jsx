@@ -32,7 +32,7 @@ export default function Expertise({
           {AREAS.map(({ icon, label }, i) => (
             <li key={label} className="expertise-box" data-reveal style={{ '--d': `${0.1 + i * 0.08}s` }}>
               <div className="expertise-icon">
-                <img src={`/images/icons/${icon}.png`} alt="" />
+                <img src={`${import.meta.env.BASE_URL}images/icons/${icon}.png`} alt="" />
               </div>
               <p>{label}</p>
             </li>

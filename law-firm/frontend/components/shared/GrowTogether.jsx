@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-const FOOTER_IMAGE = '/images/footer-bg.jpg'
+const FOOTER_IMAGE = `${import.meta.env.BASE_URL}images/footer-bg.jpg`
 
 export default function GrowTogether({ image = FOOTER_IMAGE, variant, title, cta = 'Contact us' }) {
   const sectionRef = useRef(null)

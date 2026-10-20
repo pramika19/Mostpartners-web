@@ -2,8 +2,8 @@
 // faint stars and a slow drifting haze along the valley.
 
 const PHOTOS = {
-  investors: { src: '/images/hero-investors-blue.jpg', pos: '0% 60%' },
-  about: { src: '/images/hero-about.jpg', pos: '65% 60%' },
+  investors: { src: `${import.meta.env.BASE_URL}images/hero-investors-blue.jpg`, pos: '0% 60%' },
+  about: { src: `${import.meta.env.BASE_URL}images/hero-about.jpg`, pos: '65% 60%' },
 }
 
 const STARS = [

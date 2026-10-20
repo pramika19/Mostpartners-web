@@ -32,9 +32,9 @@ export default function RoutePage({ route }) {
         : <Achieve intro={page.achieveIntro} items={page.achieve} />}
       <HowWeWork audience={route} steps={page.how} />
       <Expertise />
-      {route === 'founders' ? <GrowTogether image="/images/footer-founders.jpg" variant="sunset" />
-        : route === 'companies' ? <GrowTogether image="/images/footer-companies.jpg" variant="mist" />
-        : route === 'investors' ? <GrowTogether image="/images/footer-investors.jpg" variant="twilight" />
+      {route === 'founders' ? <GrowTogether image={`${import.meta.env.BASE_URL}images/footer-founders.jpg`} variant="sunset" />
+        : route === 'companies' ? <GrowTogether image={`${import.meta.env.BASE_URL}images/footer-companies.jpg`} variant="mist" />
+        : route === 'investors' ? <GrowTogether image={`${import.meta.env.BASE_URL}images/footer-investors.jpg`} variant="twilight" />
         : <GrowTogether />}
     </main>
   )

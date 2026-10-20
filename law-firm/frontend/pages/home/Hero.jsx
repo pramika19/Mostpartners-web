@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import CountUp from './CountUp.jsx'
 
-const HERO_IMAGE = '/images/hero-bg.jpg'
+const HERO_IMAGE = `${import.meta.env.BASE_URL}images/hero-bg.jpg`
 const IMG_W = 1742
 const IMG_H = 903
 
