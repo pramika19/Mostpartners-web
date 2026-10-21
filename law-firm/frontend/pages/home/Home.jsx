@@ -20,7 +20,7 @@ export default function Home() {
       <BridgeLine />
       <TeamsMarquee />
       <GrowTogether
-        title={<>Want to unlock business potential ?<br /><span className="grad-text">Built for growth.</span></>}
+        title={<>Want to unlock business potential<br /><span className="grad-text">built for growth?</span></>}
         cta="Let’s plan and structure smarter"
       />
     </main>
