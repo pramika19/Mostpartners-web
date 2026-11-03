@@ -1414,3 +1414,60 @@ body:has(.page--companies) .footer-bottom { margin-top: 28px; padding-top: 16px;
 .expertise .expertise-card { grid-template-columns: minmax(0, 1fr) 38%; }
 .expertise .expertise-card .expertise-icon img { width: 122%; max-width: none; margin-right: -22%; }
 @media (max-width: 640px) { .expertise .expertise-card .expertise-icon img { width: 100%; margin-right: 0; } }
+/* footer without the Pages column (About, Expertise and Team pages removed 2026-11-03) */
+.footer-grid { grid-template-columns: 1.6fr 1fr 1.2fr; }
+@media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } .footer-brand { grid-column: 1 / -1; } }
+@media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
+/* menu (2026-11-03): Explore as sits on the right beside Contact us, its label in golden beige */
+@media (min-width: 961px) { .nav-links { justify-content: flex-end; } }
+.nav-label { color: #d6b98c; }
+/* menu bar a little shorter (2026-11-03) */
+.nav-inner { padding-top: 14px; padding-bottom: 14px; }
+@media (max-width: 960px) { .nav-inner { padding-top: 12px; padding-bottom: 12px; } }
+/* How we work sections, shorter (2026-11-03): Companies matches Investors; Founders steps sit closer together */
+.page--companies .chow { padding: clamp(70px, 6vw, 86px) 0 clamp(64px, 5.4vw, 80px); }
+.page--companies .chow .h-display { font-size: clamp(28px, 2.6vw, 38px); }
+.page--companies .chow-row { margin-top: clamp(40px, 4.4vw, 64px); }
+.page--founders .how { padding: 80px 0; }
+.page--founders .how .timeline { padding-top: 8px; padding-bottom: 8px; }
+.page--founders .how .timeline-item { padding-bottom: 44px; }
+.page--founders .how .timeline-item:last-child { padding-bottom: 0; }
+@media (max-width: 640px) { .page--founders .how { padding: 64px 0; } .page--founders .how .timeline-item { padding-bottom: 32px; } }
+/* investors: the black mountain carries on below the hero as a band holding the intro words */
+.inv-intro { position: relative; z-index: 2; background: #15181f; margin-top: -1px; padding: clamp(10px, 2vw, 30px) 0 clamp(70px, 7vw, 110px); }
+.inv-intro h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(22px, 2.1vw, 30px); line-height: 1.35; color: #f1ece7; max-width: 780px; }
+.inv-intro p { margin-top: 22px; max-width: 660px; font-size: 15px; line-height: 1.75; color: rgba(220, 214, 208, 0.75); }
+/* companies: the grey mountain carries on below the hero the same way */
+.inv-intro--companies { background: #51545d; }
+.inv-intro--companies p { color: rgba(236, 232, 228, 0.78); }
+
+/* Investors footer, like Founders and Companies: the picture shown whole, the footer on its dark ground */
+.page--investors .grow { margin-top: 0; min-height: 0; aspect-ratio: 1852 / 849; }
+.page--investors .grow::after { display: none; }
+.page--investors .grow .grow-fade, .page--investors .grow-photo { -webkit-mask-image: none; mask-image: none; }
+.page--investors .grow-photo { transform: none !important; object-position: center bottom; }
+.page--investors .grow-inner { padding-top: clamp(40px, 5vw, 80px); }
+body:has(.page--investors) .footer { position: relative; margin-top: clamp(-90px, -5vw, -40px); padding: 0 0 20px; background: #161920; border-top: 0; box-shadow: 0 -2px 0 #161920; }
+body:has(.page--investors) .footer-bottom { margin-top: 28px; padding-top: 16px; border-top-color: rgba(255, 255, 255, 0.08); }
+@media (max-width: 640px) {
+  .page--investors .grow { aspect-ratio: auto; padding-bottom: calc(100vw * 849 / 1852); }
+  .page--investors .grow .grow-fade { top: auto; bottom: 0; height: calc(100vw * 849 / 1852); }
+  .page--investors .grow-inner { padding-top: 0; padding-bottom: 28px; }
+  body:has(.page--investors) .footer { margin-top: 0; }
+}
+
+/* Home hero: dotted threads from each dot on the line down to its number (2026-11-03) */
+.hero-links { position: absolute; left: 0; top: 0; z-index: 1; pointer-events: none; overflow: visible; }
+.hero-links g { animation: fadeIn 1s calc(1.6s + var(--i) * 0.2s) var(--ease) both; }
+.hero-link { fill: none; stroke: #f7692a; stroke-opacity: 0.75; stroke-width: 1.2; stroke-dasharray: 1.5 5; stroke-linecap: round; }
+.hero-link-spark { fill: none; stroke: #ffb48a; stroke-width: 2; stroke-linecap: round; stroke-dasharray: 6 94; stroke-dashoffset: 6;
+  animation: heroSpark 3.2s calc(2.4s + var(--i) * 0.4s) ease-in infinite; opacity: 0; }
+.hero-link-end { fill: #f7692a; }
+@keyframes heroSpark { 0% { stroke-dashoffset: 6; opacity: 0; } 10% { opacity: 1; } 70% { stroke-dashoffset: -94; opacity: 1; } 71%, 100% { stroke-dashoffset: -94; opacity: 0; } }
+.hero .stat { padding-top: 6px; }
+
+/* Home routes: all three cards the same width and height (2026-11-03) */
+.routes-layout .route-cards { align-items: stretch; }
+.routes-layout .route-card { width: 100%; }
+.routes-layout .route-toggle { min-height: 145px; }
+@media (max-width: 600px) { .routes-layout .route-toggle { min-height: 128px; } }

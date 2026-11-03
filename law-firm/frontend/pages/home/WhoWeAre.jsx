@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import Architecture from '../../components/shared/Architecture.jsx'
 import ArchBackdrop from '../../components/shared/ArchBackdrop.jsx'
 import Timeline from '../../components/shared/Timeline.jsx'
@@ -41,9 +40,6 @@ export default function WhoWeAre() {
             At Most, we help founders, companies and investors move from idea to exit, making deals
             happen, avoiding costly mistakes and unlocking opportunity.
           </p>
-          <Link to="/about" className="btn btn-outline btn-sm" data-reveal style={{ '--d': '0.3s' }}>
-            About us <span aria-hidden="true">↗</span>
-          </Link>
           <Architecture variant="courthouse" />
         </div>
         <Timeline items={TOPICS} />

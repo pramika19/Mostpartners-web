@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import Logo from './Logo.jsx'
 
 export default function Navbar() {
@@ -21,11 +21,6 @@ export default function Navbar() {
       <div className="nav-inner">
         <Logo />
         <nav className="nav-links" aria-label="Main">
-          <div className="nav-group">
-            <NavLink to="/about" onClick={close}>About us</NavLink>
-            <Link to="/#expertise" onClick={close}>Our Expertise</Link>
-            <Link to="/about#team" onClick={close}>Our Team</Link>
-          </div>
           <div className="nav-group">
             <span className="nav-label">Explore as <span className="dash" /></span>
             <NavLink to="/founders" onClick={close}>Founders</NavLink>

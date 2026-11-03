@@ -9,13 +9,6 @@ export default function Footer() {
           <Logo />
           <p>Long-term partners in law and business.</p>
         </div>
-        <div className="footer-col" data-reveal style={{ '--d': '0.1s' }}>
-          <h4>Pages</h4>
-          <Link to="/about">About us</Link>
-          <Link to="/#expertise">Our Expertise</Link>
-          <Link to="/about#team">Our Team</Link>
-          <a href="#contact">Contact us</a>
-        </div>
         <div className="footer-col" data-reveal style={{ '--d': '0.2s' }}>
           <h4>Explore as</h4>
           <Link to="/founders">Founders</Link>

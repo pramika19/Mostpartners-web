@@ -3,12 +3,11 @@ import ArchBackdrop from '../../components/shared/ArchBackdrop.jsx'
 import Timeline from '../../components/shared/Timeline.jsx'
 import BuildingConstruct from './companies/BuildingConstruct.jsx'
 import DealFlow from './investors/DealFlow.jsx'
-import OrangeArchitecture from './founders/OrangeArchitecture.jsx'
 
 export default function HowWeWork({ audience, steps }) {
   return (
     <section className="section how">
-      {audience === 'founders' ? <OrangeArchitecture variant="frame" flow /> : <ArchBackdrop variant="arches" />}
+      {audience === 'founders' ? null : <ArchBackdrop variant="arches" />}
       <div className="container who-grid">
         <div className="who-intro">
           <p className="eyebrow" data-reveal>— Our process —</p>

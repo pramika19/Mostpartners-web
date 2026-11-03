@@ -25,6 +25,11 @@ export const ROUTE_PAGES = {
     eyebrow: 'For companies',
     title: ['Legal foundations that', 'support your growth.'],
     sub: 'Structure, contracts and compliance built for organisations scaling across teams, products and markets.',
+    // shown in the grey band under the hero (draft wording, 2026-11-03)
+    intro: {
+      title: 'As a company, your focus is on building, scaling, and staying ahead in your market.',
+      text: 'From commercial contracts and employment to group structuring, financing, and international expansion, we help you build strong legal foundations, reduce risk, and keep your business moving forward.',
+    },
     achieveIntro: 'Strong legal foundations that keep your organisation moving forward.',
     achieve: [
       { title: 'Structure for scale', text: 'Group structures and governance designed for the company you are becoming.' },
@@ -46,6 +51,11 @@ export const ROUTE_PAGES = {
     eyebrow: 'For investors',
     title: ['Legal support that protects', 'value and keeps deals moving.'],
     sub: 'Diligence, deal terms and portfolio support for funds, family offices and angels investing across borders.',
+    // shown in the dark band under the hero
+    intro: {
+      title: 'As an investor, your focus is on finding opportunities, assessing risk, and generating returns.',
+      text: 'From early-stage investments to multi-party rounds, follow-ons, secondaries, and exits, we help you move efficiently, protect your position, and maximise long-term value.',
+    },
     achieveIntro: 'Structure, negotiate, and close investments with clarity and speed.',
     achieve: [
       { text: 'Structure deals clearly, efficiently, and with future scalability in mind' },

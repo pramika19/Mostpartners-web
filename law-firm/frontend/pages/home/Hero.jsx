@@ -1,16 +1,16 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 import CountUp from './CountUp.jsx'
 
-const HERO_IMAGE = `${import.meta.env.BASE_URL}images/hero-home-dusk.jpg`
-const IMG_W = 1742
-const IMG_H = 903
+const HERO_IMAGE = `${import.meta.env.BASE_URL}images/hero-home-climb.jpg`
+const IMG_W = 1620
+const IMG_H = 971
 
 // Where the four orange dots sit in the photo, as fractions of its width/height
 const PHOTO_DOTS = [
-  [0.1734, 0.7929],
-  [0.4173, 0.7176],
-  [0.651, 0.5592],
-  [0.8783, 0.4596],
+  [0.1699, 0.765],
+  [0.4144, 0.697],
+  [0.6432, 0.5601],
+  [0.8747, 0.4741],
 ]
 
 const STATS = [
@@ -21,8 +21,9 @@ const STATS = [
 ]
 
 // Mirrors `object-fit: cover; object-position: center bottom` to find each dot on screen
-function useDotPositions(imgRef) {
+function useDotPositions(imgRef, statsRef) {
   const [dots, setDots] = useState([])
+  const [box, setBox] = useState(null)
   useLayoutEffect(() => {
     const measure = () => {
       const img = imgRef.current
@@ -33,18 +34,25 @@ function useDotPositions(imgRef) {
       const offX = img.offsetLeft + (W - IMG_W * s) / 2
       const offY = img.offsetTop + H - IMG_H * s
       setDots(PHOTO_DOTS.map(([fx, fy]) => ({ x: offX + fx * IMG_W * s, y: offY + fy * IMG_H * s })))
+      const stats = statsRef.current
+      if (stats) setBox({ w: stats.offsetWidth, h: stats.offsetTop + 8, show: stats.offsetLeft === 0 && getComputedStyle(stats).position === 'absolute' })
     }
     measure()
     const ro = new ResizeObserver(measure)
     ro.observe(imgRef.current)
+    if (statsRef.current) ro.observe(statsRef.current)
     return () => ro.disconnect()
-  }, [imgRef])
-  return dots
+  }, [imgRef, statsRef])
+  return [dots, box]
 }
+
+// Same rule as the stat's left: clamp(150px, x, 100% - 150px)
+const statX = (x, w) => Math.min(Math.max(x, 150), w - 150)
 
 export default function Hero() {
   const photoRef = useRef(null)
-  const dots = useDotPositions(photoRef)
+  const statsRef = useRef(null)
+  const [dots, box] = useDotPositions(photoRef, statsRef)
 
   return (
     <section className="hero">
@@ -55,6 +63,22 @@ export default function Hero() {
           <span key={i} className="photo-dot" style={{ left: d.x, top: d.y, '--i': i }} aria-hidden="true" />
         ))}
       </div>
+
+      {/* Orange dotted threads tying each dot on the line to its number below */}
+      {box?.show && dots.length > 0 && (
+        <svg className="hero-links" width={box.w} height={box.h} viewBox={`0 0 ${box.w} ${box.h}`} aria-hidden="true">
+          {dots.map((d, i) => {
+            const path = `M${d.x} ${d.y + 12} L${statX(d.x, box.w)} ${box.h - 6}`
+            return (
+              <g key={i} style={{ '--i': i }}>
+                <path className="hero-link" d={path} />
+                <path className="hero-link-spark" d={path} pathLength="100" />
+                <circle className="hero-link-end" cx={statX(d.x, box.w)} cy={box.h - 6} r="2.5" />
+              </g>
+            )
+          })}
+        </svg>
+      )}
 
       {/* The text stays pinned while the tall hero scrolls past, then leaves with it */}
       <div className="hero-pin">
@@ -72,7 +96,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="hero-stats">
+      <div className="hero-stats" ref={statsRef}>
         {STATS.map((s, i) => (
           <div
             key={s.label}

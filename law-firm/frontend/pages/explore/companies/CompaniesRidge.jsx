@@ -13,8 +13,10 @@ function ridgeY(x) {
 }
 const PTS = Array.from({ length: W / 5 + 1 }, (_, k) => [k * 5, ridgeY(k * 5)])
 const RIDGE = 'M' + PTS.map(([x, y]) => `${x} ${y.toFixed(1)}`).join(' L')
-const LINE = 'M' + PTS.map(([x, y]) => `${x} ${(y + 4).toFixed(1)}`).join(' L')
-const DOTS = [250, 640, 1120, 1420].map((x) => [x, ridgeY(x) + 4])
+// the orange line runs a little way inside the mountain, below its edge
+const DROP = 22
+const LINE = 'M' + PTS.map(([x, y]) => `${x} ${(y + DROP).toFixed(1)}`).join(' L')
+const DOTS = [250, 640, 1120, 1420].map((x) => [x, ridgeY(x) + DROP])
 
 export default function CompaniesRidge() {
   return (

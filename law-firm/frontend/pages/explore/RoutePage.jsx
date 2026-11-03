@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import PageHero from '../../components/shared/PageHero.jsx'
 import PageScene from '../../components/shared/PageScene.jsx'
 import Achieve from './Achieve.jsx'
@@ -30,9 +29,16 @@ export default function RoutePage({ route }) {
       >
         <div className="hero-actions">
           <a href="#contact" className="btn btn-solid btn-lg">Book a consultation <span aria-hidden="true">→</span></a>
-          <Link to="/about" className="btn btn-outline btn-lg">About us</Link>
         </div>
       </PageHero>
+      {page.intro && (
+        <section className={`inv-intro inv-intro--${route}`}>
+          <div className="container">
+            <h2 data-reveal>{page.intro.title}</h2>
+            <p data-reveal style={{ '--d': '0.12s' }}>{page.intro.text}</p>
+          </div>
+        </section>
+      )}
       {route === 'founders' ? <AchieveTimeline intro={page.achieveIntro} items={page.achieve} />
         : route === 'investors' ? <InvestorsAchieve intro={page.achieveIntro} items={page.achieve} />
         : <Achieve intro={page.achieveIntro} items={page.achieve} />}
