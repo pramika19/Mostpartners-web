@@ -48,7 +48,6 @@ function Range() {
         }
         return <P key={n} d={d} i={n * 1.2} dashed={n === 0} />
       })}
-      <P d="M0 410 H1600" i={5} />
     </svg>
   )
 }

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 
 // Shared hero for inner pages: full-height scene with a staggered title and parallax on scroll
-export default function PageHero({ eyebrow, title, sub, children, scene }) {
+export default function PageHero({ eyebrow, title, sub, children, scene, edge }) {
   const sceneRef = useRef(null)
   const contentRef = useRef(null)
 
@@ -39,6 +39,7 @@ export default function PageHero({ eyebrow, title, sub, children, scene }) {
         <p className="hero-sub hero-in" style={{ '--d': '0.9s' }}>{sub}</p>
         <div className="hero-in" style={{ '--d': '1.05s' }}>{children}</div>
       </div>
+      {edge}
     </section>
   )
 }

@@ -16,12 +16,13 @@ export default function Home() {
         sub="Combining legal expertise with business judgment to shape key decisions across startup growth, funding, operations and international expansion."
         intro="Through our expertise, we seamlessly integrate legal considerations into business strategy and operations, protect what is being built, execute transactions effectively and help navigate the many aspects of running a business."
         more={{ to: '/about', label: 'Explore our expertise' }}
+        arch
       />
       <BridgeLine />
       <TeamsMarquee />
       <GrowTogether
         title={<>Want to unlock business potential<br /><span className="grad-text">built for growth?</span></>}
-        cta="Let’s plan and structure smarter"
+        cta="Let’s shape your growth.."
       />
     </main>
   )
