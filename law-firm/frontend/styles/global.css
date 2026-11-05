@@ -1523,3 +1523,60 @@ body:has(.page--investors) .footer-bottom { margin-top: 28px; padding-top: 16px;
 .page--contact .grow { margin-top: -120px; }
 .page--contact .grow-fade { -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.25) 14%, rgba(0,0,0,0.7) 26%, #000 38%, #000 62%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.25) 14%, rgba(0,0,0,0.7) 26%, #000 38%, #000 62%, transparent 100%); }
 .page--contact .ct-form-section { padding-bottom: 160px; }
+
+/* Contact round 2 (2026-11-05): hero invites the scroll, details move down beside the form, glowing card over contour lines */
+.ct-hero { min-height: 92vh; min-height: 92svh; justify-content: flex-start; }
+.ct-hero::before { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 32%; z-index: 1; pointer-events: none;
+  background: linear-gradient(180deg, transparent, #060814); }
+.ct-scroll { position: absolute; z-index: 3; left: 50%; bottom: 0; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 14px; color: var(--white); }
+.ct-scroll-label { font-family: var(--label); font-size: 10.5px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--accent); opacity: 0.9; transition: color 0.3s; }
+.ct-scroll:hover .ct-scroll-label { color: #fff; }
+.ct-scroll-line { position: relative; width: 1px; height: 96px; background: linear-gradient(180deg, rgba(247, 105, 42, 0.5), rgba(247, 105, 42, 0)); overflow: visible; }
+.ct-scroll-line span { position: absolute; left: -3px; top: 0; width: 7px; height: 7px; border-radius: 50%; background: #f7692a; box-shadow: 0 0 12px 3px rgba(247, 105, 42, 0.6);
+  animation: ctDrop 2.4s 1.8s cubic-bezier(0.6, 0, 0.4, 1) infinite; }
+@keyframes ctDrop { 0% { transform: translateY(0); opacity: 0; } 15% { opacity: 1; } 80% { opacity: 1; } 100% { transform: translateY(150px); opacity: 0; } }
+
+.ct-form-section { overflow: hidden; padding-top: 140px; }
+.ct-form-grid { position: relative; z-index: 1; }
+.ct-arch { opacity: 0.55; top: 18%; bottom: auto; }
+.ct-arch svg { height: clamp(260px, 32vw, 460px); }
+.ct-topo { position: absolute; left: -6%; top: 6%; width: min(46vw, 620px); opacity: 0.45; z-index: 0; }
+
+.ct-details { display: grid; grid-template-columns: 1fr 1fr; gap: 30px 32px; margin: 48px 0 0; max-width: 460px; }
+.ct-detail { padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.14); }
+.ct-detail dd { margin: 10px 0 0; font-size: 14px; color: var(--white); }
+.ct-detail a { color: var(--white); transition: color 0.3s; }
+.ct-detail a:hover { color: var(--accent); }
+
+.ct-form { position: relative; isolation: isolate; overflow: hidden; background: rgba(14, 18, 32, 0.72); border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 40px 90px -50px rgba(0, 0, 0, 0.9); }
+.ct-form-glow { position: absolute; inset: -40%; z-index: -1; pointer-events: none; opacity: 0.75;
+  background:
+    radial-gradient(42% 36% at 26% 24%, rgba(46, 78, 160, 0.55), transparent 70%),
+    radial-gradient(42% 36% at 74% 78%, rgba(222, 110, 60, 0.45), transparent 70%),
+    linear-gradient(150deg, rgba(28, 44, 92, 0.5), rgba(17, 22, 34, 0) 50%, rgba(160, 80, 50, 0.3));
+  animation: routeDrift 18s ease-in-out infinite alternate; }
+.ct-form::after { content: ''; position: absolute; top: 0; left: 0; width: 40%; height: 1px; z-index: 1; pointer-events: none;
+  background: linear-gradient(90deg, transparent, #f7692a, transparent); animation: ctEdge 6s ease-in-out infinite; }
+@keyframes ctEdge { 0% { transform: translateX(-100%); opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } 100% { transform: translateX(250%); opacity: 0; } }
+.ct-form:focus-within .ct-form-glow { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .ct-form-glow, .ct-form::after, .ct-scroll-line span { animation: none; } }
+@media (max-width: 960px) {
+  .ct-hero { min-height: 90svh; }
+  .ct-topo { width: 80vw; left: -20%; }
+}
+@media (max-width: 600px) {
+  .ct-details { grid-template-columns: 1fr 1fr; gap: 22px 20px; margin-top: 36px; }
+  .ct-scroll-line { height: 64px; }
+  .ct-form-section { padding-top: 96px; }
+}
+.ct-hero { min-height: 80vh; min-height: 80svh; }
+.ct-form-section { padding-top: 96px; }
+.ct-arch { opacity: 0.4; top: 40%; }
+.ct-topo { left: auto; right: 2%; top: 2%; width: min(40vw, 560px); opacity: 0.35; }
+.ct-scroll-line { height: 72px; }
+@media (max-width: 960px) { .ct-hero { min-height: 82svh; } .ct-topo { right: -20%; width: 90vw; } }
+.ct-hero { min-height: 74vh; min-height: 74svh; }
+.ct-form-section { padding-top: 56px; }
+@media (max-width: 960px) { .ct-hero { min-height: 78svh; } }
+@media (max-width: 600px) { .ct-hero { min-height: 70svh; } .ct-form-section { padding-top: 36px; } .ct-photo { object-position: 60% 85%; } .ct-scroll { gap: 10px; } }

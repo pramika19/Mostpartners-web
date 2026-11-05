@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import GrowTogether from '../../components/shared/GrowTogether.jsx'
+import Architecture from '../../components/shared/Architecture.jsx'
 
 const EMAIL = 'bemost@mostpartners.com'
 const ROLES = ['Founder', 'Company', 'Investor', 'Other']
@@ -35,38 +36,43 @@ export default function Contact() {
             <span className="hero-line"><span style={{ '--d': '0.5s' }}><span className="grad-text">what comes next.</span></span></span>
           </h1>
           <p className="hero-sub hero-in" style={{ '--d': '0.8s' }}>Tell us where you are headed. We usually reply within one business day.</p>
-          <a href="#ct-form" className="btn btn-outline btn-lg hero-in" style={{ '--d': '0.95s' }}>
-            Write to us <span className="bob" aria-hidden="true">↓</span>
-          </a>
         </div>
-        <div className="container ct-info">
-          <div className="ct-info-item hero-in" style={{ '--d': '1.2s' }}>
-            <span className="ct-label">Email</span>
-            <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-          </div>
-          <div className="ct-info-item hero-in" style={{ '--d': '1.35s' }}>
-            <span className="ct-label">Our experience</span>
-            <span>Europe – US – UK</span>
-          </div>
-          <div className="ct-info-item hero-in" style={{ '--d': '1.5s' }}>
-            <span className="ct-label">Office</span>
-            <span>Bracka 20, Warsaw</span>
-          </div>
-          <div className="ct-info-item hero-in" style={{ '--d': '1.65s' }}>
-            <span className="ct-label">Follow us</span>
-            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-          </div>
-        </div>
+        {/* a glowing line runs down and off the hero, inviting the scroll to the form */}
+        <a href="#ct-form" className="ct-scroll hero-in" style={{ '--d': '1.2s' }} aria-label="Scroll to the form">
+          <span className="ct-scroll-label">Scroll to write to us</span>
+          <span className="ct-scroll-line" aria-hidden="true"><span /></span>
+        </a>
       </section>
 
       <section className="ct-form-section" id="ct-form">
+        <Architecture variant="skyline" className="ct-arch" />
+        <Architecture variant="courthouse" className="ct-topo" />
         <div className="container ct-form-grid">
           <div className="ct-form-head" data-reveal>
             <p className="eyebrow">— Get in touch —</p>
             <h2 className="ct-h2">Start the <span className="grad-text">conversation.</span></h2>
             <p className="ct-lead">A few lines are enough. Share your stage, your plans and what you need, and the right partner will come back to you.</p>
+            <dl className="ct-details">
+              <div className="ct-detail" data-reveal style={{ '--d': '0.2s' }}>
+                <dt className="ct-label">Email</dt>
+                <dd><a href={`mailto:${EMAIL}`}>{EMAIL}</a></dd>
+              </div>
+              <div className="ct-detail" data-reveal style={{ '--d': '0.3s' }}>
+                <dt className="ct-label">Our experience</dt>
+                <dd>Europe – US – UK</dd>
+              </div>
+              <div className="ct-detail" data-reveal style={{ '--d': '0.4s' }}>
+                <dt className="ct-label">Office</dt>
+                <dd>Bracka 20, 00-028 Warsaw</dd>
+              </div>
+              <div className="ct-detail" data-reveal style={{ '--d': '0.5s' }}>
+                <dt className="ct-label">Follow us</dt>
+                <dd><a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a></dd>
+              </div>
+            </dl>
           </div>
           <form className="ct-form" onSubmit={send} data-reveal style={{ '--d': '0.15s' }}>
+            <span className="ct-form-glow" aria-hidden="true" />
             <fieldset className="ct-roles">
               <legend className="ct-label">I am a</legend>
               {ROLES.map((r) => (
