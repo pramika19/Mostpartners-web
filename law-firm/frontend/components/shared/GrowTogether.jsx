@@ -1,8 +1,9 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 
 const FOOTER_IMAGE = `${import.meta.env.BASE_URL}images/footer-bg.jpg`
 
-export default function GrowTogether({ image = FOOTER_IMAGE, variant, title, cta = 'Contact us' }) {
+export default function GrowTogether({ image = FOOTER_IMAGE, variant, title, cta = 'Contact us', to = '/contact' }) {
   const sectionRef = useRef(null)
   const photoRef = useRef(null)
 
@@ -31,9 +32,9 @@ export default function GrowTogether({ image = FOOTER_IMAGE, variant, title, cta
         <h2 className="h-display grow-title" data-reveal>
           {title || <>Want to <span className="grad-text">Grow Together?</span></>}
         </h2>
-        <a href="mailto:bemost@mostpartners.com" className="btn btn-solid btn-lg" data-reveal style={{ '--d': '0.15s' }}>
+        <Link to={to} className="btn btn-solid btn-lg" data-reveal style={{ '--d': '0.15s' }}>
           {cta} <span aria-hidden="true">→</span>
-        </a>
+        </Link>
       </div>
     </section>
   )

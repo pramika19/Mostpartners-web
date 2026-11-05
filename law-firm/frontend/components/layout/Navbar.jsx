@@ -27,7 +27,7 @@ export default function Navbar() {
             <NavLink to="/companies" onClick={close}>Companies</NavLink>
             <NavLink to="/investors" onClick={close}>Investors</NavLink>
           </div>
-          <a href="#contact" className="btn btn-outline" onClick={close}>Contact us</a>
+          <NavLink to="/contact" className="btn btn-outline" onClick={close}>Contact us</NavLink>
         </nav>
         <button
           className="nav-toggle"

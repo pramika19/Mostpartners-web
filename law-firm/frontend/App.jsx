@@ -7,6 +7,7 @@ import ScrollRail from './components/layout/ScrollRail.jsx'
 import useReveal from './hooks/useReveal.js'
 import Home from './pages/home/Home.jsx'
 import RoutePage from './pages/explore/RoutePage.jsx'
+import Contact from './pages/contact/Contact.jsx'
 
 export default function App() {
   useReveal()
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="/founders" element={<RoutePage route="founders" />} />
         <Route path="/companies" element={<RoutePage route="companies" />} />
         <Route path="/investors" element={<RoutePage route="investors" />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </>
